@@ -3,9 +3,10 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Predicate;
 
 import entities.Product;
-import util.ProductPredicate;
+
 
 public class PredicateAula {
 
@@ -28,8 +29,11 @@ public class PredicateAula {
 		// como argumento.
 		isso é aceito no sistema lambda do Java  */
 		
-		list.removeIf(Product::nonStaticProductPredicate);
+		/*list.removeIf(Product::nonStaticProductPredicate);*/
+		 
+		Predicate <Product>  pred = p -> p.getPrice() >= 100.0;
 		
+		list.removeIf(pred);
 		
 		for (Product p : list) {
 			System.out.println(p);
