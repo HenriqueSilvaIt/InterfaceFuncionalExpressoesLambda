@@ -20,7 +20,13 @@ public class PredicateAula {
 		
 		/*list.removeIf(p -> p.getPrice() >= 100);*/
 		
-		list.removeIf(new ProductPredicate());
+		/*list.removeIf(new ProductPredicate());*/
+		
+		list.removeIf(Product::staticProductPredicate); // Isso daqui
+		// é chamado de MethodReference (refêrencia para método)
+		// basta colocar o nome da classe seguido de : duas vezes e o nome do método
+		// como argumento.
+		// isso é aceito no sistema lambda do Java
 		
 		for (Product p : list) {
 			System.out.println(p);
