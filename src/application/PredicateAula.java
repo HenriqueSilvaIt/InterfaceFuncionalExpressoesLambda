@@ -31,10 +31,24 @@ public class PredicateAula {
 		
 		/*list.removeIf(Product::nonStaticProductPredicate);*/
 		 
-		Predicate <Product>  pred = p -> p.getPrice() >= 100.0;
 		
-		list.removeIf(pred);
 		
+		
+		/*	 Exemplo expressão lambda declarada
+		
+		double min = 100.0;
+		Predicate <Product>  pred = p -> p.getPrice() >= min;
+		// dessa forma acima fica legal porque podemos pegar valores
+		// de variaveis, posso até pedir para o usuário digitar um valor
+		// e eu imprimir esse valor na tela */
+		
+		// Expressao lambda inLine (não declarada)
+		
+		double min = 100.0;
+		list.removeIf(p -> p.getPrice() >= min);
+		// dessa forma acima fica legal porque podemos pegar valores
+				// de variaveis, posso até pedir para o usuário digitar um valor
+				// e eu imprimir esse valor na tela */
 		for (Product p : list) {
 			System.out.println(p);
 		}
